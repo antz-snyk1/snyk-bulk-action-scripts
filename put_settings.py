@@ -33,7 +33,7 @@ orgs = jopen(orgfile)
 set_val = json.loads(str(set_val).lower())
 setting = str(setting)
 
-new_setting = {setting: set_val}
+new_setting = {"autoRemediationPrs":{setting: set_val}}
 
 client = snyk.SnykClient(snyktoken)
 

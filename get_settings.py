@@ -68,7 +68,7 @@ def get_org_integrations(orgs, client):
         slug = org['slug'].replace('.','')
         fname = f'{org_dir}/{slug}.json'
         print(f'writing settings to {fname}')
-        #jwrite(org,fname)
+        jwrite(org,fname)
     return orgs
 
 print('retrieving org settings')

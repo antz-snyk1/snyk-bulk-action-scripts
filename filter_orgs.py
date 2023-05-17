@@ -49,8 +49,8 @@ def to_lower(cap: dict) -> dict:
 
 def filter_int(integration, int_name, setting, set_val):
     lower_int = to_lower(integration)
-    if lower_int['name'] == int_name and setting in lower_int['settings']:
-        n_set = lower_int['settings'][setting]
+    if lower_int['name'] == int_name and setting in lower_int['settings']['autoremediationprs']:
+        n_set = lower_int['settings']['autoremediationprs'][setting]
         n_val = set_val
         if n_set == n_val:
             return True

@@ -50,7 +50,7 @@ done
 
 This filter script works with the org_cache folder of data. To get a list of organizations that have their gitlab integration with `pullRequestTestEnabled` set to `True` (which will fail PRs if vulnerabilities are present), this is the command:
 ```
-❯ python3 filter_orgs.py org_cache gitlab pullRequestTestenabled "true"
+❯ python3 filter_orgs.py org_cache github-enterprise backlogPrsEnabled "true" > backlog-prs-enabled-TRUE.json
 [
   {
     "id": "2bcac16c-650a-406a-b2b2-5c723fbd5593",
@@ -101,7 +101,7 @@ Save the full output to a file for the next step, updating those settings:
 
 This takes output of filter_orgs.py and along with the desired integration configuration and applies to the organization in Snyk. When you run this, this script will make changes to organization settings!
 ```
-❯ python3 put_settings.py to_modify.json gitlab pullRequestTestEnabled False
+❯ python3 put_settings.py backlog-prs-enabled-TRUE.json github-enterprise backlogPrsEnabled "false"
 updating gitlab integration for org Sneezing Dog, Inc.
 Sneezing Dog, Inc. has had setting of pullRequestTestEnabled for gitlab set to False
 done
